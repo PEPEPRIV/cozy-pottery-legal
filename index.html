@@ -55,8 +55,10 @@ nav a:hover { color: var(--link); text-decoration: underline; }
 <main>
 <nav>
   <button type="button" data-lang="en" aria-pressed="true">English</button>
+  <button type="button" data-lang="de" aria-pressed="false">Deutsch</button>
   <button type="button" data-lang="ru" aria-pressed="false">Русский</button>
   <a data-lang="en" href="support/">Support &rarr;</a>
+  <a data-lang="de" href="support/" hidden>Hilfe &rarr;</a>
   <a data-lang="ru" href="support/" hidden>Поддержка &rarr;</a>
 </nav>
 <section data-lang="en">
@@ -64,36 +66,39 @@ nav a:hover { color: var(--link); text-decoration: underline; }
 <p><strong>Game:</strong> Cozy Pottery (listed on Google Play as “Cozy Pottery: Clay Studio”), application ID <code>com.EvgeniiBudanov.RealPottery</code>.</p>
 <p><strong>Developer:</strong> Evgenii Budanov, independent developer.</p>
 <p><strong>Contact:</strong> <a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a></p>
-<p><strong>Effective date:</strong> 25 August 2026</p>
+<p><strong>Effective date:</strong> 8 October 2026</p>
 <hr>
 <h2>In short</h2>
-<p>The game asks for no sign-up, does not know your name, and shows no ads. The only things it collects are anonymous statistics about how people play and crash reports. Both exist so we can see where the game confuses people and fix what breaks. No advertising identifiers are collected in any form.</p>
+<p>The game asks for no sign-up, does not know your name, and shows no ads. It collects statistics about how the game goes, records the course of play sessions, and sends crash reports. All of this exists so we can see where the game confuses people and fix what breaks. The data is tied to a random installation identifier, not to you. No advertising identifiers are collected in any form.</p>
 <h2>What is collected</h2>
-<p><strong>In-game activity.</strong> Which tasks were started and finished, how many attempts a task took, whether the tutorial was completed, whether you reached the kiln, which screens were opened. These are events like “task 4 completed” — not the contents of your work.</p>
-<p><strong>Installation identifier.</strong> A random identifier created by the analytics service on first launch. It belongs to the installation, not to you: it is not tied to your phone number, email, Google account, or advertising profile. Reinstalling the game creates a new one.</p>
-<p><strong>Technical data.</strong> Device model, operating system version, language, game version. Country is derived by the service from the IP address of the connection — the game itself never requests location and holds no location permission.</p>
-<p><strong>Crash reports.</strong> If the game crashes, a report is sent: where the error occurred, the build version, and the state of the device at that moment.</p>
+<p><strong>In-game activity.</strong> Which tasks were started and finished, how many attempts a task took, whether the tutorial was completed, whether you reached the kiln, which screens were opened, which settings are on.</p>
+<p><strong>Session recording.</strong> The game records the course of a play session so that it can be replayed to understand where a player struggled: touches and gestures on the screen, the buttons pressed, what was shown on screen (interface texts and character lines), the shape of the vase while sculpting and the firing result, the camera position, the frame rate, and screen changes and the game going to the background. The game has no text input fields, so nothing you type ends up in a recording. Sound, camera images, and screenshots are not recorded.</p>
+<p><strong>Installation identifier.</strong> A random identifier that the game itself creates when collection starts. It belongs to the installation, not to you: it is not tied to your phone number, email, Google or Apple account, or advertising profile. The same identifier is used in statistics, session recordings, and crash reports, so they can be matched up. It is not carried over through backups; reinstalling the game or withdrawing consent creates a new one. You can see your identifier in the game: “Menu → Advanced settings”, at the bottom.</p>
+<p><strong>Technical data.</strong> Device model, operating system version, graphics chip, memory size, screen size and refresh rate, system language, region from the device settings, time zone, game version. The statistics service also derives the country from the IP address of the connection — the game itself never requests location and holds no location permission.</p>
+<p><strong>Crash reports.</strong> If the game crashes or hits an error, a report is sent: where the error occurred, the build version, and the state of the device at that moment.</p>
 <h2>What is not collected</h2>
-<p>Name, email address, phone number, postal address, contacts, calendar, photos, files, microphone, precise location, or browsing history outside the game.</p>
+<p>Name, email address, phone number, postal address, contacts, calendar, photos, files, microphone, camera, precise location, or browsing history outside the game.</p>
 <p><strong>Advertising identifiers (GAID on Android, IDFA on iOS) are not collected.</strong> Advertising ID tracking is disabled in the analytics SDK settings; the game contains no ads, and you will never see a tracking request.</p>
 <p>There are no accounts and no purchases in the game.</p>
 <h2>What stays on your device</h2>
-<p>Your progress, the shapes you make, task results, and settings are stored locally on your device and are never uploaded. Deleting the game deletes them with it.</p>
+<p>Your progress, the shapes you make, task results, and settings are stored on your device. They leave it only to the extent that they appear in a session recording (see above). Deleting the game deletes them with it.</p>
 <h2>Why this data is collected</h2>
-<p>The sole purpose is analytics: understanding where players get stuck, which tasks are too hard, and fixing errors we would otherwise never hear about. The data is not used for advertising, personalisation, or profiling, and is not sold to anyone.</p>
-<h2>Who processes the data</h2>
-<p>Two services process this data on our behalf and only for the purposes above:</p>
-<ul><li><strong>GameAnalytics</strong> (Denmark) — gameplay event statistics. <a href="https://gameanalytics.com/privacy">https://gameanalytics.com/privacy</a></li><li><strong>Sentry</strong> (USA) — crash reports. <a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></li></ul>
-<p>The data is not shared with anyone else. Processing takes place on servers in the European Union and the United States.</p>
+<p>The sole purpose is improving the game: understanding where players get stuck, which tasks are too hard, where the interface is unclear, and fixing errors we would otherwise never hear about. The data is not used for advertising, personalisation, or profiling, and is not sold to anyone.</p>
+<h2>Who processes the data, and where</h2>
+<ul><li><strong>GameAnalytics</strong> (Denmark) — gameplay event statistics. <a href="https://gameanalytics.com/privacy">https://gameanalytics.com/privacy</a></li><li><strong>Sentry</strong> (USA) — crash reports; our project&#x27;s data is stored in the EU (Germany).   <a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></li><li><strong>Session recordings</strong> are stored as follows:   - if the device settings specify Russia as the region — in <strong>Yandex Cloud</strong>     (Yandex.Cloud LLC, Russia);   - in all other cases — in <strong>Cloudflare R2</strong> storage (Cloudflare, Inc., USA) with data     guaranteed to stay in the European Union. Recordings from the EEA, the United Kingdom,     and Switzerland never leave Europe. <a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></li></ul>
+<p>GameAnalytics, Sentry, Cloudflare, and Yandex Cloud process the data on our behalf and only for the purposes above. The data is not shared with anyone else. Processing takes place on servers in the European Union and the United States, and, for players in Russia, in Russia.</p>
 <h2>Consent</h2>
-<p><strong>In the EEA, the United Kingdom, and Switzerland</strong>, the game asks for permission to collect data on first launch. Nothing is sent before you answer. If you decline, no collection begins, and the game remains fully playable — no feature is withheld.</p>
-<p><strong>Elsewhere</strong>, collection is on by default — which is what this policy exists to disclose. You can stop it by deleting the game from your device: the installation identifier the statistics were tied to goes with it.</p>
-<p>A single answer covers both statistics and crash reports.</p>
+<p><strong>In the EEA, the United Kingdom, Switzerland, and Russia</strong>, the game asks for permission to collect data on first launch. Nothing is sent before you answer. If you decline, no collection begins, and the game remains fully playable — no feature is withheld.</p>
+<p><strong>Elsewhere</strong>, collection is on by default — which is what this policy exists to disclose.</p>
+<p>A single answer covers statistics, session recording, and crash reports. You can change it at any time: “Menu → Advanced settings → Analytics”. If you turn it off, collection stops, the installation identifier and session recordings on the device are deleted, and the game itself sends a request to delete the session recordings already transferred. GameAnalytics statistics are deleted on request (see “Your rights”); Sentry crash reports expire on their own after 90 days.</p>
+<p>The full text of the consent is a separate document: <a href="https://pepepriv.github.io/cozy-pottery-legal/consent/">https://pepepriv.github.io/cozy-pottery-legal/consent/</a></p>
 <h2>Retention</h2>
-<p>Events are retained by the processors for as long as their service terms provide; crash reports are deleted automatically after 90 days by default.</p>
+<p>Statistics and session recordings are kept for as long as the game is supported and the data is needed to improve it, or until you request deletion. Crash reports are deleted automatically after 90 days. The device itself keeps no more than the 30 most recent session recordings.</p>
 <h2>Your rights</h2>
 <p>You may request information about the data collected, request its deletion, withdraw your consent, and lodge a complaint with the data protection authority in your country.</p>
-<p>To do any of these, write to <a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a>. Please note that the collected data is anonymous, so to locate your specific installation we will need its installation identifier — we will explain where to find it when we reply.</p>
+<p>To do any of these, write to <a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a> and include your installation identifier — the game shows it under “Menu → Advanced settings”, at the bottom. The data is not linked to your name or email, so without the identifier we cannot find your particular installation.</p>
+<h2>Users in Russia</h2>
+<p>Personal data of citizens of the Russian Federation is processed under Federal Law No. 152-FZ “On Personal Data”; the details are in the Russian version of this policy. In short: the basis is consent, and data from devices with Russia as the region is stored only in Russia.</p>
 <h2>Children</h2>
 <p>The game is not directed at children under 13 and does not knowingly collect data about them. The target audience declared on Google Play is 18 and over.</p>
 <h2>Changes</h2>
@@ -101,41 +106,91 @@ nav a:hover { color: var(--link); text-decoration: underline; }
 <h2>Contact</h2>
 <p><a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a></p>
 </section>
+<section data-lang="de" hidden>
+<h1>Datenschutzerklärung</h1>
+<p><strong>Spiel:</strong> Cozy Pottery (im Google Play Store gelistet als „Cozy Pottery: Töpfern“), Anwendungs-ID <code>com.EvgeniiBudanov.RealPottery</code>.</p>
+<p><strong>Entwickler:</strong> Evgenii Budanov, unabhängiger Entwickler.</p>
+<p><strong>Kontakt:</strong> <a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a></p>
+<p><strong>Gültig ab:</strong> 8. Oktober 2026</p>
+<hr>
+<h2>Kurz gefasst</h2>
+<p>Das Spiel verlangt keine Anmeldung, kennt Ihren Namen nicht und zeigt keine Werbung. Es erhebt Statistiken darüber, wie das Spiel verläuft, zeichnet den Verlauf von Spielsitzungen auf und sendet Absturzberichte. Das alles dient dazu, zu erkennen, wo das Spiel verwirrt, und zu reparieren, was kaputtgeht. Die Daten sind an eine zufällige Installationskennung geknüpft, nicht an Sie. Werbekennungen werden in keiner Form erhoben.</p>
+<h2>Was erhoben wird</h2>
+<p><strong>Aktivität im Spiel.</strong> Welche Aufträge begonnen und abgeschlossen wurden, wie viele Versuche ein Auftrag gekostet hat, ob die Anleitung abgeschlossen wurde, ob der Brennofen erreicht wurde, welche Bildschirme geöffnet wurden, welche Einstellungen aktiv sind.</p>
+<p><strong>Aufzeichnung der Sitzung.</strong> Das Spiel zeichnet den Verlauf einer Spielsitzung auf, damit sie sich nachspielen lässt und sichtbar wird, wo es hakte: Berührungen und Gesten auf dem Bildschirm, gedrückte Schaltflächen, was auf dem Bildschirm zu sehen war (Texte der Oberfläche und Sätze der Figuren), die Form der Vase beim Töpfern und das Ergebnis des Brandes, die Kameraposition, die Bildrate sowie Bildschirmwechsel und den Wechsel des Spiels in den Hintergrund. Das Spiel hat keine Texteingabefelder, daher gelangt nichts, was Sie tippen, in eine Aufzeichnung. Ton, Kamerabilder und Bildschirmfotos werden nicht aufgezeichnet.</p>
+<p><strong>Installationskennung.</strong> Eine zufällige Kennung, die das Spiel selbst erzeugt, wenn die Erhebung beginnt. Sie gehört zur Installation, nicht zu Ihnen: Sie ist weder mit Ihrer Telefonnummer noch mit E-Mail-Adresse, Google- oder Apple-Konto oder Werbeprofil verknüpft. Dieselbe Kennung wird in der Statistik, in Sitzungsaufzeichnungen und in Absturzberichten verwendet, damit sie sich einander zuordnen lassen. Sie wird nicht über Backups übertragen; eine Neuinstallation oder der Widerruf der Einwilligung erzeugt eine neue. Ihre Kennung sehen Sie im Spiel: „Menü → Weitere Einstellungen“, ganz unten.</p>
+<p><strong>Technische Daten.</strong> Gerätemodell, Betriebssystemversion, Grafikchip, Arbeitsspeicher, Bildschirmgröße und -frequenz, Systemsprache, Region aus den Geräteeinstellungen, Zeitzone, Spielversion. Das Land leitet der Statistikdienst zusätzlich aus der IP-Adresse der Verbindung ab — das Spiel selbst fragt niemals den Standort ab und hält keine Standortberechtigung.</p>
+<p><strong>Absturzberichte.</strong> Stürzt das Spiel ab oder tritt ein Fehler auf, wird ein Bericht gesendet: wo der Fehler aufgetreten ist, welche Build-Version läuft und in welchem Zustand sich das Gerät in diesem Moment befand.</p>
+<h2>Was nicht erhoben wird</h2>
+<p>Name, E-Mail-Adresse, Telefonnummer, Postanschrift, Kontakte, Kalender, Fotos, Dateien, Mikrofon, Kamera, genauer Standort oder Browserverlauf außerhalb des Spiels.</p>
+<p><strong>Werbekennungen (GAID unter Android, IDFA unter iOS) werden nicht erhoben.</strong> Das Tracking über die Werbe-ID ist in den Einstellungen des Analyse-SDK abgeschaltet; das Spiel enthält keine Werbung, und eine Tracking-Anfrage werden Sie nie zu sehen bekommen.</p>
+<p>Es gibt im Spiel weder Konten noch Käufe.</p>
+<h2>Was auf Ihrem Gerät bleibt</h2>
+<p>Ihr Fortschritt, die Formen, die Sie gemacht haben, Auftragsergebnisse und Einstellungen werden auf Ihrem Gerät gespeichert. Sie verlassen es nur in dem Umfang, in dem sie in eine Sitzungsaufzeichnung gelangen (siehe oben). Wird das Spiel gelöscht, verschwinden sie mit ihm.</p>
+<h2>Wozu diese Daten erhoben werden</h2>
+<p>Der einzige Zweck ist, das Spiel zu verbessern: zu verstehen, wo Spielende hängen bleiben, welche Aufträge zu schwer sind, wo die Oberfläche unklar ist, und Fehler zu beheben, von denen wir sonst nie erfahren würden. Die Daten werden nicht für Werbung, Personalisierung oder Profilbildung verwendet und an niemanden verkauft.</p>
+<h2>Wer die Daten verarbeitet und wo</h2>
+<ul><li><strong>GameAnalytics</strong> (Dänemark) — Statistik über Spielereignisse. <a href="https://gameanalytics.com/privacy">https://gameanalytics.com/privacy</a></li><li><strong>Sentry</strong> (USA) — Absturzberichte; die Daten unseres Projekts liegen in der EU   (Deutschland). <a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></li><li><strong>Sitzungsaufzeichnungen</strong> werden so gespeichert:   - ist in den Geräteeinstellungen Russland als Region eingestellt — in der <strong>Yandex Cloud</strong>     (Yandex.Cloud LLC, Russland);   - in allen anderen Fällen — im Speicher <strong>Cloudflare R2</strong> (Cloudflare, Inc., USA), dessen     Daten garantiert in der Europäischen Union bleiben. Aufzeichnungen aus dem EWR, dem     Vereinigten Königreich und der Schweiz verlassen Europa nicht.     <a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></li></ul>
+<p>GameAnalytics, Sentry, Cloudflare und Yandex Cloud verarbeiten die Daten in unserem Auftrag und ausschließlich zu den oben genannten Zwecken. An niemanden sonst werden die Daten weitergegeben. Die Verarbeitung findet auf Servern in der Europäischen Union und in den Vereinigten Staaten statt, für Spielende in Russland in Russland.</p>
+<h2>Einwilligung</h2>
+<p><strong>Im EWR, im Vereinigten Königreich, in der Schweiz und in Russland</strong> fragt das Spiel beim ersten Start um Erlaubnis zur Datenerhebung. Vor Ihrer Antwort wird nichts gesendet. Lehnen Sie ab, beginnt keine Erhebung, und das Spiel bleibt vollständig spielbar — keine Funktion wird vorenthalten.</p>
+<p><strong>Anderswo</strong> ist die Erhebung standardmäßig aktiv — und genau dazu gibt es diese Erklärung.</p>
+<p>Eine einzige Antwort deckt Statistik, Sitzungsaufzeichnung und Absturzberichte ab. Sie können sie jederzeit ändern: „Menü → Weitere Einstellungen → Statistik“. Schalten Sie sie aus, endet die Erhebung, die Installationskennung und die Sitzungsaufzeichnungen auf dem Gerät werden gelöscht, und das Spiel sendet selbst eine Anfrage, bereits übermittelte Sitzungsaufzeichnungen zu löschen. Die Statistik bei GameAnalytics löschen wir auf Anfrage (siehe „Ihre Rechte“), Absturzberichte bei Sentry verfallen nach 90 Tagen von selbst.</p>
+<p>Der vollständige Text der Einwilligung ist ein eigenes Dokument: <a href="https://pepepriv.github.io/cozy-pottery-legal/consent/">https://pepepriv.github.io/cozy-pottery-legal/consent/</a></p>
+<h2>Speicherdauer</h2>
+<p>Statistik und Sitzungsaufzeichnungen werden aufbewahrt, solange das Spiel gepflegt wird und die Daten zu seiner Verbesserung gebraucht werden, oder bis Sie die Löschung verlangen. Absturzberichte werden nach 90 Tagen automatisch gelöscht. Auf dem Gerät selbst bleiben höchstens die 30 neuesten Sitzungsaufzeichnungen.</p>
+<h2>Ihre Rechte</h2>
+<p>Sie können Auskunft über die erhobenen Daten verlangen, deren Löschung verlangen, Ihre Einwilligung widerrufen und Beschwerde bei der Datenschutzaufsichtsbehörde Ihres Landes einlegen.</p>
+<p>Schreiben Sie dazu an <a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a> und geben Sie Ihre Installationskennung an — das Spiel zeigt sie unter „Menü → Weitere Einstellungen“, ganz unten. Die Daten sind nicht mit Ihrem Namen oder Ihrer E-Mail-Adresse verknüpft, daher können wir Ihre Installation ohne die Kennung nicht finden.</p>
+<h2>Nutzer in Russland</h2>
+<p>Personenbezogene Daten von Bürgern der Russischen Föderation werden nach dem Föderalen Gesetz Nr. 152-FZ „Über personenbezogene Daten“ verarbeitet; Einzelheiten stehen in der russischen Fassung dieser Erklärung. Kurz: Grundlage ist die Einwilligung, und Daten von Geräten mit der Region Russland werden nur in Russland gespeichert.</p>
+<h2>Kinder</h2>
+<p>Das Spiel richtet sich nicht an Kinder unter 13 Jahren und erhebt wissentlich keine Daten über sie. Die bei Google Play angegebene Zielgruppe ist 18 Jahre und älter.</p>
+<h2>Änderungen</h2>
+<p>Ändert sich diese Erklärung, wird die aktualisierte Fassung unter derselben Adresse mit einem neuen Gültigkeitsdatum veröffentlicht. Wesentliche Änderungen, die die Datenerhebung betreffen, werden zusätzlich im Spiel angezeigt.</p>
+<h2>Kontakt</h2>
+<p><a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a></p>
+</section>
 <section data-lang="ru" hidden>
 <h1>Политика конфиденциальности</h1>
 <p><strong>Игра:</strong> Cozy Pottery (в Google Play — «Cozy Pottery: Clay Studio»), идентификатор приложения <code>com.EvgeniiBudanov.RealPottery</code>.</p>
 <p><strong>Разработчик:</strong> Евгений Буданов, независимый разработчик.</p>
 <p><strong>Контакт:</strong> <a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a></p>
-<p><strong>Дата вступления в силу:</strong> 25 августа 2026 г.</p>
+<p><strong>Дата вступления в силу:</strong> 8 октября 2026 г.</p>
 <hr>
 <h2>Коротко</h2>
-<p>Игра не просит регистрации, не знает вашего имени и не показывает рекламу. Единственное, что она собирает, — обезличенная статистика о том, как играют, и отчёты о сбоях. Это нужно, чтобы понимать, где игра непонятна, и чинить падения. Рекламные идентификаторы не собираются ни в каком виде.</p>
+<p>Игра не просит регистрации, не знает вашего имени и не показывает рекламу. Она собирает статистику о том, как проходит игра, записывает ход сессий и отправляет отчёты о сбоях. Это нужно, чтобы видеть, где игра непонятна, и чинить поломки. Данные привязаны к случайному идентификатору установки, а не к вам. Рекламные идентификаторы не собираются ни в каком виде.</p>
 <h2>Какие данные собираются</h2>
-<p><strong>Действия в игре.</strong> Какие задания начаты и завершены, сколько попыток заняло задание, пройдено ли обучение, дошли ли до обжига, какие экраны открывались. Это события вида «задание №4 завершено», без содержания вашей работы.</p>
-<p><strong>Идентификатор установки.</strong> Случайный идентификатор, который создаёт аналитический сервис при первом запуске. Он привязан к установке игры, а не к вам: не связан с телефоном, почтой, аккаунтом Google или рекламным профилем. При переустановке игры появляется новый.</p>
-<p><strong>Технические данные.</strong> Модель устройства, версия операционной системы, язык, версия игры. Страну определяет сервис по IP-адресу соединения — сама игра геолокацию не запрашивает и разрешения на неё не имеет.</p>
-<p><strong>Отчёты о сбоях.</strong> Если игра падает, отправляется отчёт: где именно произошла ошибка, версия сборки и состояние устройства в этот момент.</p>
+<p><strong>Действия в игре.</strong> Какие задания начаты и завершены, сколько попыток заняло задание, пройдено ли обучение, дошли ли до обжига, какие экраны открывались, какие настройки включены.</p>
+<p><strong>Запись сессии.</strong> Игра записывает ход игровой сессии, чтобы её можно было воспроизвести и понять, где игроку было неудобно: касания и жесты на экране, нажатые кнопки, что было показано на экране (тексты интерфейса и реплики персонажей), форму вазы во время лепки и результат обжига, положение камеры, частоту кадров, а также смену экранов и уход игры в фон. В игре нет полей ввода, поэтому ваш текст в запись не попадает. Звук, изображение с камеры и снимки экрана не записываются.</p>
+<p><strong>Идентификатор установки.</strong> Случайный идентификатор, который игра создаёт сама при начале сбора. Он привязан к установке игры, а не к вам: не связан с телефоном, почтой, аккаунтом Google или Apple, рекламным профилем. Один и тот же идентификатор используется в статистике, в записях сессий и в отчётах о сбоях — так их можно сопоставить. Он не переносится через резервную копию; при переустановке игры или после отзыва согласия появляется новый. Свой идентификатор вы видите в игре: «Меню → Продвинутые настройки», внизу.</p>
+<p><strong>Технические данные.</strong> Модель устройства, версия операционной системы, видеокарта, объём памяти, размер и частота экрана, язык системы, регион из настроек устройства, часовой пояс, версия игры. Страну также определяет сервис статистики по IP-адресу соединения — сама игра геолокацию не запрашивает и разрешения на неё не имеет.</p>
+<p><strong>Отчёты о сбоях.</strong> Если игра падает или в ней происходит ошибка, отправляется отчёт: где именно произошла ошибка, версия сборки и состояние устройства в этот момент.</p>
 <h2>Какие данные не собираются</h2>
-<p>Имя, адрес электронной почты, телефон, почтовый адрес, контакты, календарь, фотографии, файлы, микрофон, точное местоположение, история просмотров вне игры.</p>
+<p>Имя, адрес электронной почты, телефон, почтовый адрес, контакты, календарь, фотографии, файлы, микрофон, камера, точное местоположение, история просмотров вне игры.</p>
 <p><strong>Рекламные идентификаторы (GAID на Android, IDFA на iOS) не собираются.</strong> Сбор рекламного идентификатора выключен в настройках аналитического SDK; в игре нет рекламы, и запроса на отслеживание вы не увидите.</p>
 <p>Аккаунтов в игре нет, покупок нет.</p>
 <h2>Что остаётся на устройстве</h2>
-<p>Прогресс, вылепленные формы, результаты заданий и настройки хранятся локально на вашем устройстве и никуда не отправляются. Удаление игры удаляет их вместе с собой.</p>
+<p>Прогресс, вылепленные формы, результаты заданий и настройки хранятся на вашем устройстве. Наружу они уходят только в том виде, в каком попадают в запись сессии (см. выше). Удаление игры удаляет их вместе с собой.</p>
 <h2>Зачем это нужно</h2>
-<p>Единственная цель — аналитика: понять, на каком шаге игроки застревают, какие задания слишком сложные, и починить ошибки, о которых иначе мы не узнаем. Данные не используются для рекламы, персонализации, профилирования или продажи третьим лицам.</p>
-<h2>Кто обрабатывает данные</h2>
-<p>Данные обрабатывают два сервиса — по нашему поручению и только для целей выше:</p>
-<ul><li><strong>GameAnalytics</strong> (Дания) — статистика игровых событий. <a href="https://gameanalytics.com/privacy">https://gameanalytics.com/privacy</a></li><li><strong>Sentry</strong> (США) — отчёты о сбоях. <a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></li></ul>
-<p>Другим лицам данные не передаются. Обработка происходит на серверах в Европейском союзе и США.</p>
+<p>Единственная цель — улучшение игры: понять, на каком шаге игроки застревают, какие задания слишком сложные, где интерфейс непонятен, и починить ошибки, о которых иначе мы не узнаем. Данные не используются для рекламы, персонализации, профилирования и не продаются.</p>
+<h2>Кто обрабатывает данные и где</h2>
+<ul><li><strong>GameAnalytics</strong> (Дания) — статистика игровых событий. <a href="https://gameanalytics.com/privacy">https://gameanalytics.com/privacy</a></li><li><strong>Sentry</strong> (США) — отчёты о сбоях; данные нашего проекта хранятся в ЕС (Германия).   <a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a></li><li><strong>Записи сессий</strong> хранятся так:   - если в настройках устройства указан регион «Россия» — в <strong>Яндекс Облаке</strong>     (ООО «Яндекс.Облако», Россия);   - во всех остальных случаях — в хранилище <strong>Cloudflare R2</strong> (Cloudflare, Inc., США) с     гарантированным размещением данных в Европейском союзе. Записи из ЕЭЗ, Великобритании и     Швейцарии не покидают Европу. <a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></li></ul>
+<p>GameAnalytics, Sentry, Cloudflare и Яндекс Облако обрабатывают данные по нашему поручению и только для целей выше. Другим лицам данные не передаются. Обработка происходит на серверах в Европейском союзе и США, а для игроков из России — в России.</p>
 <h2>Согласие</h2>
-<p><strong>В ЕЭЗ, Великобритании и Швейцарии</strong> при первом запуске игра спрашивает разрешение на сбор данных. До вашего ответа не отправляется ничего. Если вы откажетесь, сбор не начнётся, а игра будет работать полностью — ни одна функция от этого не закрывается.</p>
-<p><strong>В остальных странах</strong> сбор включён по умолчанию — именно об этом и рассказывает эта политика. Прекратить его можно, удалив игру с устройства: вместе с ней удаляется и идентификатор установки, по которому собиралась статистика.</p>
-<p>Ответ на этот вопрос один для статистики и для отчётов о сбоях.</p>
+<p><strong>В ЕЭЗ, Великобритании, Швейцарии и России</strong> при первом запуске игра спрашивает разрешение на сбор данных. До вашего ответа не отправляется ничего. Если вы откажетесь, сбор не начнётся, а игра будет работать полностью — ни одна функция от этого не закрывается.</p>
+<p><strong>В остальных странах</strong> сбор включён по умолчанию — именно об этом и рассказывает эта политика.</p>
+<p>Ответ один для статистики, записи сессий и отчётов о сбоях. Изменить его можно в любой момент: «Меню → Продвинутые настройки → Статистика». При отказе сбор прекращается, идентификатор установки и записи сессий на устройстве удаляются, а игра сама отправляет запрос на удаление уже переданных записей сессий. Статистику GameAnalytics удаляем по письму (см. «Ваши права»), отчёты о сбоях Sentry удаляются сами через 90 дней.</p>
+<p>Полный текст согласия — отдельным документом: <a href="https://pepepriv.github.io/cozy-pottery-legal/consent/">https://pepepriv.github.io/cozy-pottery-legal/consent/</a></p>
 <h2>Сроки хранения</h2>
-<p>События хранятся у обработчиков столько, сколько предусмотрено правилами их сервисов; отчёты о сбоях удаляются автоматически по умолчанию через 90 дней.</p>
+<p>Статистика и записи сессий хранятся, пока игра поддерживается и данные нужны для её улучшения, либо до вашего запроса на удаление. Отчёты о сбоях удаляются автоматически через 90 дней. На самом устройстве хранятся не больше 30 последних записей сессий.</p>
 <h2>Ваши права</h2>
-<p>Вы вправе запросить сведения о собранных данных, их удаление, отзыв согласия, а также подать жалобу в надзорный орган по защите данных вашей страны.</p>
-<p>Чтобы воспользоваться этим, напишите на <a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a>. Обратите внимание: собранные данные обезличены, и чтобы найти именно вашу установку, нам понадобится идентификатор установки — подскажем в ответном письме, где его посмотреть.</p>
+<p>Вы вправе запросить сведения о собранных данных, их удаление, отозвать согласие, а также подать жалобу в надзорный орган по защите данных вашей страны.</p>
+<p>Чтобы воспользоваться этим, напишите на <a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a> и укажите идентификатор установки — он показан в игре: «Меню → Продвинутые настройки», внизу. Данные не связаны с вашим именем или почтой, поэтому без идентификатора найти именно вашу установку нельзя.</p>
+<h2>Для пользователей из России</h2>
+<p>Обработка персональных данных граждан Российской Федерации ведётся по Федеральному закону № 152-ФЗ «О персональных данных».</p>
+<ul><li><strong>Оператор</strong> — Евгений Буданов, физическое лицо, <a href="mailto:budanov.evgeni@gmail.com">budanov.evgeni@gmail.com</a>.</li><li><strong>Основание</strong> — согласие субъекта (п. 1 ч. 1 ст. 6 152-ФЗ). Согласие запрашивается отдельным   экраном до начала сбора и оформлено отдельным документом:   <a href="https://pepepriv.github.io/cozy-pottery-legal/consent/">https://pepepriv.github.io/cozy-pottery-legal/consent/</a></li><li><strong>Локализация.</strong> Если в настройках устройства указан регион «Россия», данные записываются,   систематизируются, накапливаются, хранятся, уточняются и извлекаются только в базах данных   на территории Российской Федерации (Яндекс Облако, ООО «Яндекс.Облако»). GameAnalytics и   Sentry при этом не используются, трансграничная передача не осуществляется.</li><li><strong>Сроки.</strong> На запрос о ваших данных отвечаем в течение 10 рабочих дней. После отзыва   согласия данные уничтожаются не позже 30 дней — переданные записи сессий удаляются   автоматически по запросу игры.</li><li><strong>Защита.</strong> Данные передаются только по зашифрованному соединению (HTTPS), доступ к   хранилищу есть только у оператора.</li></ul>
+<p>Если вы считаете, что ваши права нарушены, вы вправе обратиться в Роскомнадзор или в суд.</p>
 <h2>Дети</h2>
 <p>Игра не адресована детям младше 13 лет и не собирает данные о них осознанно. Целевая аудитория в Google Play — 18 лет и старше.</p>
 <h2>Изменения</h2>
@@ -153,9 +208,11 @@ function show(lang) {
   history.replaceState(null, '', '#' + lang);
 }
 buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.lang)));
+const langs = ["en", "de", "ru"];
+const fallback = 'en';
 const asked = location.hash.slice(1);
-show(['ru', 'en'].includes(asked) ? asked
-     : (navigator.language || '').toLowerCase().startsWith('ru') ? 'ru' : 'en');
+const system = (navigator.language || '').toLowerCase().split('-')[0];
+show(langs.includes(asked) ? asked : langs.includes(system) ? system : fallback);
 </script>
 </body>
 </html>
